@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+    <script type="text/javascript" src="../js/jquery-2.2.4.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.ajax({
+                url:"/login/loginToIndex",
+                data:{"loginName":"zx965230","loginPassword":"965250","userBindTelNo":"18374299030"},
+                dataType:"json",
+                success:function (data) {
+                    $("#loginName").val(data.data.daloginName);
+                    $("#loginPassword").val(data.data.loginPassword);
+                    $("#userName").val(data.data.userName);
+                    $("#userBindTelNo").val(data.data.userBindTelNo);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>登陆名</th>
+            <th>登陆密码</th>
+            <th>用户名称</th>
+            <th>绑定的手机号</th>
+        </tr>
+        <tr>
+            <td><input type="text" id="loginName"/></td>
+            <td><input type="text" id="loginPassword"/></td>
+            <td><input type="text" id="userName"/></td>
+            <td><input type="text" id="userBindTelNo"/></td>
+        </tr>
+    </table>
+</body>
+</html>

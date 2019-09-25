@@ -1,12 +1,13 @@
-package com.qf.zsm.domain;
+package com.qf.zsm.my.finance.web.api.login.dto;
+
+import com.qf.zsm.domain.BankCard;
+import com.qf.zsm.domain.Invest;
+import com.qf.zsm.domain.PersonData;
 
 import java.util.List;
 import java.util.Set;
 
-public class User {
-    private Integer userId;
-    private String loginName;
-    private String loginPassword;
+public class UserDto {
     //界面显示的名称
     private String userName;
     //用户绑定的手机号
@@ -18,42 +19,15 @@ public class User {
     //关联实体类--->1个用户对多张银行卡
     private Set<BankCard> bankCards;
 
-    public User() {
+    public UserDto() {
     }
 
-    public User(Integer userId, String loginName, String loginPassword, String userName, String userBindTelNo, List<Invest> invests, PersonData personData, Set<BankCard> bankCards) {
-        this.userId = userId;
-        this.loginName = loginName;
-        this.loginPassword = loginPassword;
+    public UserDto(String userName, String userBindTelNo, List<Invest> invests, PersonData personData, Set<BankCard> bankCards) {
         this.userName = userName;
         this.userBindTelNo = userBindTelNo;
         this.invests = invests;
         this.personData = personData;
         this.bankCards = bankCards;
-    }
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
-    public String getLoginName() {
-        return loginName;
-    }
-
-    public void setLoginName(String loginName) {
-        this.loginName = loginName;
-    }
-
-    public String getLoginPassword() {
-        return loginPassword;
-    }
-
-    public void setLoginPassword(String loginPassword) {
-        this.loginPassword = loginPassword;
     }
 
     public String getUserName() {
@@ -94,19 +68,5 @@ public class User {
 
     public void setBankCards(Set<BankCard> bankCards) {
         this.bankCards = bankCards;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", loginName='" + loginName + '\'' +
-                ", loginPassword='" + loginPassword + '\'' +
-                ", userName='" + userName + '\'' +
-                ", userBindTelNo='" + userBindTelNo + '\'' +
-                ", invests=" + invests +
-                ", personData=" + personData +
-                ", bankCards=" + bankCards +
-                '}';
     }
 }
